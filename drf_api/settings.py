@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-$_5us1i%6kww9+3s13x+6ja5cci94_drjft-r4+#m_v@ji66=&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-ramonabroberg-drf-api-w34e6m1j3u.us2.codeanyapp.com']
 
 
 # Application definition
