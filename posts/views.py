@@ -35,8 +35,8 @@ class PostList(APIView):
 
 
 class PostDetail(APIView):
-    serializer_class = PostSerializer
     permission_classes = [IsOwnerOrReadOnly]
+    serializer_class = PostSerializer
 
     def get_object(self, pk):
         try:
@@ -51,6 +51,7 @@ class PostDetail(APIView):
         serializer = PostSerializer(post, context={'request': request})
         return Response(serializer.data)
 
+    
     def put(self, request, pk):
         post = self.get_object(pk)
         serializer = PostSerializer(
@@ -60,3 +61,10 @@ class PostDetail(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk):
+        post = self.get_object(pk)
+        post.delete()
+        return Response(
+            status=status.HTTP_204_NO_CONTENT
+        )
