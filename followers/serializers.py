@@ -1,15 +1,16 @@
 from django.db import IntegrityError
 from rest_framework import serializers
-from likes.models import Like
+from followers.models import Follower
 
 
-class LikeSerializer(serializers.ModelSerializer):
+class FollowerSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
+    followed_name = serializers.ReadOnlyField(source='followed.username')
 
     class Meta:
-        model = Like
+        model = Follower
         fields = [
-            'id', 'owner', 'post', 'created_at'
+            'id', 'owner', 'followed', 'followed_name', 'created_at'
         ]
     
     def create(self, validated_data):
