@@ -66,7 +66,6 @@ ALLOWED_HOSTS = [
     'https://drf-api-rb-b449fd56fdb1.herokuapp.com/'
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -98,7 +97,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware'
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
