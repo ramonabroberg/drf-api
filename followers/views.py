@@ -13,7 +13,7 @@ class FollowerList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
-class FollowerDetail(generics.RestrieveDestroyAPIView):
+class FollowerDetail(generics.RetrieveDestroyAPIView):
     serializer_class = FollowerSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Follower.objects.all()
