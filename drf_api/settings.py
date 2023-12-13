@@ -63,7 +63,7 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-ramonabroberg-drf-api-w34e6m1j3u.us2.codeanyapp.com',
-    'https://drf-api-rb-b449fd56fdb1.herokuapp.com'
+    'drf-api-rb-b449fd56fdb1.herokuapp.com'
 ]
 
 # Application definition
